@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruslan — Coaching séduction en visio</title>
+<meta name="description" content="Arrête de bloquer. Apprends à aborder en soirée et dans la rue avec assurance, en coaching individuel en visio. Premier appel de 15 minutes offert.">
+<style>
+  :root{
+    --bg:#0e0f13; --bg-2:#16181f; --card:#1c1f28; --line:#2a2e3a;
+    --ink:#f4f2ee; --ink-2:#c9c6bf; --muted:#8d8a84;
+    --gold:#e2b45c; --gold-dark:#c99a3f; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:5;background:rgba(14,15,19,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .brand{font-weight:800;letter-spacing:.02em;text-decoration:none}
+  .brand span{color:var(--gold)}
+  .btn{display:inline-block;background:var(--gold);color:#16130c;font-weight:800;text-decoration:none;padding:15px 24px;border-radius:12px;border:0;cursor:pointer;font-size:17px;transition:background .15s}
+  .btn:hover{background:var(--gold-dark)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid #4a4f5e}
+  .btn-ghost:hover{background:var(--bg-2)}
+  .btn-sm{padding:9px 16px;font-size:15px}
+
+  .hero{padding:56px 0 64px}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .kicker{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.03em;margin:12px 0 18px}
+  .lead{font-size:19px;color:var(--ink-2);margin:0 0 28px}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .reassure{margin-top:14px;font-size:14px;color:var(--muted)}
+  .video{aspect-ratio:9/12;max-height:560px;width:100%;border-radius:var(--radius);border:1px dashed #4a4f5e;background:linear-gradient(160deg,#1c1f28,#121318);display:grid;place-items:center;text-align:center;color:var(--muted);padding:24px}
+  .video .play{width:72px;height:72px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 14px}
+  .video .play:after{content:"";border-left:22px solid #16130c;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.02em;margin:0 0 14px}
+  .sub{color:var(--ink-2);font-size:18px;max-width:40em;margin:0 0 36px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{margin:0 0 8px;font-size:19px}
+  .card p{margin:0;color:var(--ink-2);font-size:16px}
+  .pain{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .pain li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px 16px 48px;position:relative;color:var(--ink-2)}
+  .pain li:before{content:"✕";position:absolute;left:18px;top:15px;color:#e5766b;font-weight:800}
+  .learn li:before{content:"✓";color:var(--gold)}
+
+  .photo{aspect-ratio:4/5;border-radius:var(--radius);border:1px dashed #4a4f5e;background:var(--card);display:grid;place-items:center;color:var(--muted);text-align:center;padding:20px}
+  .about p{color:var(--ink-2)}
+  .about strong{color:var(--ink)}
+
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;position:relative}
+  .plan.best{border:2px solid var(--gold)}
+  .badge{position:absolute;top:-13px;left:24px;background:var(--gold);color:#16130c;font-weight:800;font-size:13px;padding:4px 10px;border-radius:99px}
+  .plan h3{margin:0;font-size:20px}
+  .price{font-size:42px;font-weight:800;letter-spacing:-.03em;margin:8px 0 2px}
+  .price small{font-size:16px;color:var(--muted);font-weight:600}
+  .plan ul{padding-left:20px;color:var(--ink-2);margin:14px 0 22px;flex:1}
+  .plan li{margin:6px 0}
+  .plan .btn{text-align:center}
+  .guarantee{margin-top:22px;border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;color:var(--ink-2);background:var(--bg-2)}
+  .guarantee b{color:var(--gold)}
+
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .steps .card:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#16130c;font-weight:800;margin-bottom:14px}
+
+  .lead-box{background:linear-gradient(135deg,#221d12,#1c1f28);border:1px solid #5a4a26;border-radius:20px;padding:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .cover{aspect-ratio:3/4;max-width:240px;margin:0 auto;border-radius:10px;background:#f4f2ee;color:#16130c;padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 50px -20px #000}
+  .cover b{font-size:26px;line-height:1.1;letter-spacing:-.02em}
+  .cover span{font-size:13px;font-weight:700;color:#8a6a24;letter-spacing:.08em;text-transform:uppercase}
+  form .field{margin-bottom:12px}
+  label{display:block;font-size:14px;font-weight:600;margin-bottom:6px;color:var(--ink-2)}
+  input{width:100%;padding:14px;border-radius:10px;border:1px solid #3a3f4d;background:#0f1116;color:var(--ink);font-size:16px;font-family:inherit}
+  input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  .consent{display:flex;gap:10px;font-size:13px;color:var(--muted);font-weight:400;align-items:flex-start}
+  .consent input{width:auto;margin-top:3px}
+  form .btn{width:100%}
+  .hidden{display:none}
+  .ok{text-align:center}
+  .ok .btn{margin-top:12px}
+  .err{color:#e5766b;font-size:14px}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:700}
+  details p{color:var(--ink-2);margin:10px 0 0}
+
+  .final{text-align:center}
+  .final .sub{margin-left:auto;margin-right:auto}
+  footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+  @media (max-width:880px){
+    .hero .wrap,.grid2,.lead-box{grid-template-columns:1fr}
+    .grid3,.plans,.steps,.pain{grid-template-columns:1fr}
+    .video{aspect-ratio:4/5;max-height:none}
+    section{padding:52px 0}
+    .lead-box{padding:24px}
+    header .btn-sm{padding:8px 12px;font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<!--
+  À REMPLACER AVANT LA MISE EN LIGNE :
+  1. RESERVATION_APPEL / RESERVATION_SEANCE / RESERVATION_PACK : liens Cal.com (connecté à Stripe pour les formules payantes)
+  2. La vidéo de présentation (bloc .video) et la photo (bloc .photo)
+  3. Les témoignages : section commentée plus bas, à décommenter avec de VRAIS avis seulement
+-->
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">RUSLAN<span>.</span> <span style="color:var(--muted);font-weight:600">coaching séduction</span></a>
+    <a class="btn btn-sm" href="#offres">Appel gratuit</a>
+  </div>
+</header>
+
+<section class="hero" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Coaching individuel en visio</div>
+      <h1>Arrête de bloquer. Aborde en soirée et dans la rue avec assurance.</h1>
+      <p class="lead">Tu la vois, tu as envie d'aller lui parler… et tu restes planté. Je t'apprends exactement quoi faire, quoi dire et comment le dire, avec une méthode que je pratique depuis des années sur le terrain.</p>
+      <div class="ctas">
+        <a class="btn" href="#offres">Réserver mon appel gratuit (15 min)</a>
+        <a class="btn btn-ghost" href="#guide">Recevoir le guide gratuit</a>
+      </div>
+      <p class="reassure">Sans engagement · 100 % confidentiel · Depuis chez toi</p>
+    </div>
+    <div class="video" id="video">
+      <!-- Remplacer ce bloc par la vidéo de présentation (60 à 90 s) -->
+      <div><div class="play"></div><b style="color:var(--ink)">Ta vidéo de présentation ici</b><br>60 à 90 secondes face caméra : qui tu es, ta méthode, à qui tu t'adresses.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Tu te reconnais ?</h2>
+    <p class="sub">Si au moins une de ces situations te parle, c'est que le problème n'est pas ton physique. C'est la méthode.</p>
+    <ul class="pain">
+      <li>Tu attends « le bon moment » pour aborder, et il ne vient jamais</li>
+      <li>Après « salut », tu ne sais plus quoi dire</li>
+      <li>Tu rentres de soirée seul, en te disant « la prochaine fois »</li>
+      <li>Tu as peur du refus, ou du regard de ses amies</li>
+      <li>La conversation part bien, puis s'éteint d'un coup</li>
+      <li>Tu obtiens des numéros… qui ne répondent jamais</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce que tu vas apprendre</h2>
+    <p class="sub">Du concret, applicable dès ta prochaine sortie.</p>
+    <div class="grid3">
+      <div class="card"><h3>Aborder sans bloquer</h3><p>Le moment, l'angle, la première phrase. En boîte comme dans la rue, et même quand elle est en groupe.</p></div>
+      <div class="card"><h3>Tenir la conversation</h3><p>Quoi dire après « salut », créer de la complicité, faire rire sans forcer, ne jamais tomber dans le blanc.</p></div>
+      <div class="card"><h3>Lire les signaux</h3><p>Savoir quand elle est intéressée, quand avancer, et quand partir avec le sourire. Une séduction respectueuse, c'est aussi savoir entendre un non.</p></div>
+      <div class="card"><h3>Gérer le refus</h3><p>Ne plus le prendre pour toi, rebondir, et garder ton énergie pour la suite de la soirée.</p></div>
+      <div class="card"><h3>Conclure</h3><p>Passer de la conversation au numéro, puis du numéro au rendez-vous, sans que ça retombe.</p></div>
+      <div class="card"><h3>Ta confiance</h3><p>Posture, voix, regard, tenue : l'image que tu renvoies avant même d'ouvrir la bouche.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid2 about">
+    <div class="photo" id="photo">
+      <!-- Remplacer par ta photo (portrait, lumière naturelle, regard caméra) -->
+      <div><b style="color:var(--ink)">Ta photo ici</b><br>Portrait, lumière naturelle, regard caméra.</div>
+    </div>
+    <div>
+      <div class="kicker">Qui je suis</div>
+      <h2>Ruslan, coach en séduction</h2>
+      <p>Ça fait des années que je pratique la séduction <strong>sur le terrain</strong> : en boîte de nuit, en soirée, dans la rue. Pas de théorie lue dans des livres : ce que je t'apprends, je l'ai testé moi-même, soirée après soirée.</p>
+      <p>Mon autre métier, c'est la <strong>vente par téléphone</strong>. Je passe mes journées à créer un lien avec des inconnus en quelques secondes, à gérer les refus et à garder la conversation vivante. C'est exactement ce qu'il te manque en soirée.</p>
+      <p>Ma règle : <strong>une séduction respectueuse</strong>. On apprend à plaire en étant à l'aise et sincère, jamais en forçant.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES : à décommenter quand tu as de VRAIS avis (avec l'accord écrit des personnes)
+<section>
+  <div class="wrap">
+    <h2>Ils ont arrêté de bloquer</h2>
+    <div class="grid3">
+      <div class="card"><p>« Avis réel ici. »</p><h3 style="margin-top:12px;font-size:16px">Prénom, âge, ville</h3></div>
+    </div>
+  </div>
+</section>
+-->
+
+<section>
+  <div class="wrap">
+    <h2>Comment se passe une séance</h2>
+    <p class="sub">En visio, depuis chez toi. Rien n'est enregistré.</p>
+    <div class="steps">
+      <div class="card"><h3>Ton point de départ</h3><p>Ce qui bloque, tes sorties, ce que tu veux changer.</p></div>
+      <div class="card"><h3>Le diagnostic</h3><p>Je repère précisément ce qui te freine : approche, conversation, posture ou confiance.</p></div>
+      <div class="card"><h3>La méthode</h3><p>Phrases, mises en situation, jeux de rôle : on s'entraîne pour de vrai.</p></div>
+      <div class="card"><h3>Ta mission</h3><p>Un objectif clair pour ta prochaine sortie. On fait le point à la séance suivante.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="offres">
+  <div class="wrap">
+    <h2>Choisis ta formule</h2>
+    <p class="sub">Commence par l'appel gratuit : on voit ensemble si je peux t'aider, sans engagement.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Appel découverte</h3>
+        <div class="price">0 € <small>15 min</small></div>
+        <ul>
+          <li>On parle de ta situation</li>
+          <li>Je te dis ce qui te bloque</li>
+          <li>Un premier conseil à appliquer tout de suite</li>
+        </ul>
+        <a class="btn" href="RESERVATION_APPEL">Réserver l'appel gratuit</a>
+      </div>
+      <div class="plan">
+        <h3>Séance</h3>
+        <div class="price">59 € <small>45 min</small></div>
+        <ul>
+          <li>Une séance complète sur ton blocage principal</li>
+          <li>Mises en situation et jeux de rôle</li>
+          <li>Ta mission pour la prochaine sortie</li>
+        </ul>
+        <a class="btn btn-ghost" href="RESERVATION_SEANCE">Réserver une séance</a>
+      </div>
+      <div class="plan best">
+        <span class="badge">Le plus efficace</span>
+        <h3>Accompagnement</h3>
+        <div class="price">199 € <small>4 séances</small></div>
+        <ul>
+          <li>4 séances de 45 min, une par semaine</li>
+          <li>Débrief de tes sorties entre les séances, par message</li>
+          <li>Un programme qui avance avec toi</li>
+        </ul>
+        <a class="btn" href="RESERVATION_PACK">Commencer l'accompagnement</a>
+      </div>
+    </div>
+    <div class="guarantee"><b>Garantie :</b> si tu estimes ne rien avoir appris pendant ta première séance payante, je te rembourse. Sans discussion.</div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="wrap">
+    <div class="lead-box">
+      <div>
+        <div class="kicker">Gratuit</div>
+        <h2>Les 7 erreurs qui te font rater en boîte de nuit</h2>
+        <p class="sub" style="margin-bottom:22px">Le guide que j'aurais voulu avoir à mes débuts. Tu le reçois tout de suite, et ensuite mes conseils par mail, plus l'invitation à mon coaching de groupe gratuit, une fois par mois.</p>
+        <form id="lead" name="guide" method="POST" data-netlify="true" netlify-honeypot="site_web" novalidate>
+          <input type="hidden" name="form-name" value="guide">
+          <p class="hidden"><label>Ne pas remplir <input name="site_web"></label></p>
+          <div class="field"><label for="prenom">Ton prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
+          <div class="field"><label for="email">Ton e-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label class="consent"><input type="checkbox" name="consentement" value="oui" required> J'accepte de recevoir le guide et les conseils de Ruslan par e-mail. Désinscription en un clic.</label></div>
+          <button class="btn" type="submit">Je veux le guide gratuit</button>
+          <p class="err hidden" id="err">Merci de remplir ton prénom, ton e-mail et de cocher la case.</p>
+        </form>
+        <div class="ok hidden" id="ok">
+          <h3>C'est envoyé !</h3>
+          <p style="color:var(--ink-2)">Ton guide est prêt. Regarde aussi tes mails : la suite arrive bientôt.</p>
+          <a class="btn" href="guide.html" target="_blank">Lire le guide maintenant</a>
+        </div>
+      </div>
+      <div class="cover"><span>Guide gratuit</span><b>Les 7 erreurs qui te font rater en boîte de nuit</b><span style="color:#16130c;letter-spacing:0;text-transform:none;font-weight:600">par Ruslan</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:820px">
+    <h2>Questions fréquentes</h2>
+    <details><summary>Je suis très timide, ça peut marcher pour moi ?</summary><p>Oui. Bloquer au moment d'aborder, c'est le problème le plus courant, et la timidité n'est pas une fatalité. La confiance vient de la méthode et de l'entraînement, pas d'un trait de caractère.</p></details>
+    <details><summary>Comment se passe le coaching ?</summary><p>En visio, sur ordinateur ou téléphone. Tu choisis ton créneau, tu reçois un lien, et on se retrouve à l'heure prévue.</p></details>
+    <details><summary>C'est confidentiel ?</summary><p>Totalement. Rien n'est enregistré, rien n'est partagé. Ce qu'on se dit reste entre nous.</p></details>
+    <details><summary>Je ne sors pas beaucoup en boîte, c'est utile quand même ?</summary><p>Oui. Les mêmes principes marchent dans la rue, en soirée entre amis, au travail ou dans la vie de tous les jours.</p></details>
+    <details><summary>Et si je ne suis pas satisfait ?</summary><p>Si tu estimes ne rien avoir appris pendant ta première séance payante, je te rembourse.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Ta prochaine soirée peut être différente.</h2>
+    <p class="sub">15 minutes, gratuites, pour savoir exactement ce qui te bloque.</p>
+    <a class="btn" href="RESERVATION_APPEL">Réserver mon appel gratuit</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ruslan · Coaching séduction</span>
+    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#donnees">Confidentialité</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('lead'), ok=document.getElementById('ok'), err=document.getElementById('err');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){err.classList.remove('hidden');return;}
+    err.classList.add('hidden');
+    var b=f.querySelector('button'); b.disabled=true; b.textContent='Envoi…';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){if(!r.ok)throw 0; f.classList.add('hidden'); ok.classList.remove('hidden');
+        try{ if(window.fbq) fbq('track','Lead'); if(window.gtag) gtag('event','generate_lead'); }catch(e){} })
+      .catch(function(){b.disabled=false;b.textContent='Je veux le guide gratuit';err.textContent="L'envoi n'a pas marché, réessaie.";err.classList.remove('hidden');});
+  });
+})();
+</script>
+</body>
+</html>
