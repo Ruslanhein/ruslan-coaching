@@ -312,6 +312,8 @@
     if(!f.checkValidity()){err.classList.remove('hidden');return;}
     err.classList.add('hidden');
     var b=f.querySelector('button'); b.disabled=true; b.textContent='Envoi…';
+    try{ var bd=new FormData(); bd.append('EMAIL',f.email.value); bd.append('PRENOM',f.prenom.value); bd.append('email_address_check',''); bd.append('locale','fr');
+      fetch('https://b35ed951.sibforms.com/serve/MUIFALVU-DyCDBww9r3dP9-6tJKfLpGhbK6pvm_hGSDxskFwnczlkKQzep0fVZmm3pivTo8S80WphNkUKJFUn7rhaKGqZuix-hzF8bAZRiSWcRKWZitFzmdzDR0scajWHmk9DIx7IsR8EPsz3WtuNEFKbeLP4_mdLVftWkBotxGDuRzox3VstuJNv8wu99fH1t2kfMK-ScLm49ZEEg',{method:'POST',mode:'no-cors',body:bd}); }catch(x){}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
       .then(function(r){if(!r.ok)throw 0; f.classList.add('hidden'); ok.classList.remove('hidden');
         try{ if(window.fbq) fbq('track','Lead'); if(window.gtag) gtag('event','generate_lead'); }catch(e){} })
